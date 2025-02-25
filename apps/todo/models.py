@@ -11,6 +11,6 @@ class Task(models.Model):
         SCHOOL = "school", "School"
 
     content = models.TextField()
-    categories = models.CharField(max_length=7, choices=Categories.choices, default=Categories.Home)
+    category = models.CharField(max_length=7, choices=Categories.choices, default=Categories.Home)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tasks")
     created_at = models.DateTimeField(auto_now=True)
