@@ -1,4 +1,4 @@
-<div class="grid grid-cols-3 gap-4" {{ attrs }}>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4" {{ attrs }}>
     {% if data %}
     {% for note in data %}
     <c-note.detail author="{{ note.author }}" content="{{ note.content }}" time="{{ note.created_at }}"
