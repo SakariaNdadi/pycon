@@ -9,3 +9,9 @@ dependencies = [
     "django-cotton>=1.5.1",
     "django-cotton-components>=0.1.6",
 ]
+
+[dependency-groups]
+dev = [
+    "django-browser-reload>=1.18.0",
+    "ruff>=0.9.7",
+]
