@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
+from django.urls import reverse_lazy
 
 from .forms import NoteForm
 from .models import Note
@@ -20,6 +21,7 @@ def create_note(request) -> HttpResponse:
         note = form.save(commit=False)
         note.author = request.user
         note.save()
+        return redirect("home")
     return render(request, "components/note/list.html", {"data": Note.objects.all()})
 
 
