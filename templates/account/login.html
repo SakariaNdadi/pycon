@@ -1,0 +1,17 @@
+{% load tailwind_filters %}
+<c-base title="Login">
+    <c-slot name="extra_js">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    </c-slot>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <c-button label="Login" type="submit" />
+    </form>
+    <div class="mt-5">
+        <p class="text-neutral-500">Don't have an account? <a class="text-indigo-500"
+                href="{% url 'account_signup' %}">Signup</a></p>
+    </div>
+
+</c-base>
