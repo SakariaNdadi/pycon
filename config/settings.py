@@ -19,7 +19,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 MY_APPS = [
-    "apps.todo",
+    "apps.todo.apps.TodoConfig",
 ]
 
 THIRD_PARTY_APPS = [
