@@ -21,7 +21,10 @@
 <body>
     <c-navbar />
 
+
+    {% if user.is_authenticated %}
     <c-drawer />
+    {% endif %}
 
     <main class="p-10">
         {{ slot }}
