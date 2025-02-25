@@ -1,0 +1,6 @@
+{% load tailwind_filters %}
+<form method="post" {{ attrs }}>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <c-button label="{{label}}" type="submit" />
+</form>
