@@ -16,13 +16,13 @@ def c_index(request):
 def create_task(request):
     form = NoteForm(request.POST)
     if form.is_valid():
-        task = form.save(commit=False)
-        task.author = request.user
-        task.save()
-    return render(request, "components/task/list.html", {"data": Note.objects.all()})
+        note = form.save(commit=False)
+        note.author = request.user
+        note.save()
+    return render(request, "components/note/list.html", {"data": Note.objects.all()})
 
 
 def delete_task(request, id):
-    task = Note.objects.get(id=id)
-    task.delete()
-    return render(request, "components/task/list.html", {"data": Note.objects.all()})
+    note = Note.objects.get(id=id)
+    note.delete()
+    return render(request, "components/note/list.html", {"data": Note.objects.all()})

@@ -1,9 +1,0 @@
-<div class="grid grid-cols-3 gap-4" {{ attrs }}>
-    {% if data %}
-    {% for task in data %}
-    <c-task.detail author="{{ task.author }}" content="{{ task.content }}" category="{{ task.category }}" />
-    {% endfor %}
-    {% else %}
-    <p>No Tasks</p>
-    {% endif %}
-</div>
