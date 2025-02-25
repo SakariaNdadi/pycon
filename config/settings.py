@@ -26,6 +26,8 @@ THIRD_PARTY_APPS = [
     "django_browser_reload",
     "django_cotton",
     "django_cotton_components",
+    "allauth",
+    "allauth.account",
 ]
 
 INSTALLED_APPS = (
@@ -41,6 +43,11 @@ INSTALLED_APPS = (
     + MY_APPS
 )
 
+THIRD_PARTY_MIDDLEWARE = [
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -49,8 +56,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
-]
+] + THIRD_PARTY_MIDDLEWARE
 
 ROOT_URLCONF = "config.urls"
 
