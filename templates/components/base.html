@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
 
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 
 
     {# named slots #}
-    {{ head }}
-    {{ extra_css }}
-    {{ extra_js }}
+        {{ head }}
+        {{ extra_css }}
+        {{ extra_js }}
 
-</head>
+    </head>
 
-<body>
-    <c-navbar />
+    <body>
+        <c-navbar />
 
 
-    {% if user.is_authenticated %}
-    <c-drawer />
-    {% endif %}
+        {% if user.is_authenticated %}
+            <c-drawer />
+        {% endif %}
 
-    <main class="p-10">
-        {{ slot }}
-    </main>
+        <main class="p-10">
+            {{ slot }}
+        </main>
 
-    {{ scripts }}
+        {{ scripts }}
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
-</body>
+    </body>
 
 </html>

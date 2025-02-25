@@ -1,24 +1,24 @@
 <article id="{{ id }}"
-    class="group rounded-sm flex max-w-md flex-col border border-neutral-300 bg-neutral-50 p-6 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
+         class="group rounded-sm flex max-w-md flex-col border border-neutral-300 bg-neutral-50 p-6 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
 
     <div class="inline-flex">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-            class="size-12 text-neutral-900 dark:text-white group-hover:scale-105 transition duration-500 ease-out"
-            aria-hidden="true">
+             class="size-12 text-neutral-900 dark:text-white group-hover:scale-105 transition duration-500 ease-out"
+             aria-hidden="true">
             <path
                 d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z" />
         </svg>
         {% if user == note.author %}
-        <span class="justify-stretch">
-            <svg class="size-5 text-red-600 dark:text-white group-hover:scale-105 transition duration-500 ease-out cursor-pointer"
-                hx-delete="{% url 'delete_note' id %}" hx-target="#note-list"
-                hx-confirm="Are you sure you want to delete note?" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
-            </svg>
-        </span>
+            <span class="justify-stretch">
+                <svg class="size-5 text-red-600 dark:text-white group-hover:scale-105 transition duration-500 ease-out cursor-pointer"
+                     hx-delete="{% url 'delete_note' id %}" hx-target="#note-list"
+                     hx-confirm="Are you sure you want to delete note?" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                     viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                </svg>
+            </span>
         {% endif %}
     </div>
     <p class="mt-2 text-pretty text-sm">{{ content }}</p>
