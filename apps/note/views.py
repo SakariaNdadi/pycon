@@ -1,6 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render, redirect
-from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import NoteForm
 from .models import Note
