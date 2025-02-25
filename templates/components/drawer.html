@@ -18,7 +18,7 @@
         <span class="sr-only">Close menu</span>
     </button>
 
-    <form hx-post="{% url 'create_task' %}" hx-target="#note-list" hx-swap="outerHTML">
+    <form hx-post="{% url 'create_note' %}" hx-target="#note-list" hx-swap="outerHTML">
         {% csrf_token %}
         {{ form|crispy }}
         <div class="grid grid-cols-2 gap-4">
