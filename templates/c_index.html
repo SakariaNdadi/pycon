@@ -1,0 +1,10 @@
+<c-base title="Homepage">
+    <c-slot name="extra_js">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    </c-slot>
+
+    <div id="task-list">
+        <c-task.list :data="tasks" />
+    </div>
+
+</c-base>
