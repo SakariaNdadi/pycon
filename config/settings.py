@@ -28,6 +28,8 @@ THIRD_PARTY_APPS = [
     "django_cotton_components",
     "allauth",
     "allauth.account",
+    "crispy_forms",
+    "crispy_tailwind",
 ]
 
 INSTALLED_APPS = (
@@ -148,3 +150,6 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"

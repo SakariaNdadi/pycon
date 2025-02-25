@@ -83,6 +83,19 @@ wheels = [
 ]
 
 [[package]]
+name = "crispy-tailwind"
+version = "1.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "django-crispy-forms" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ae/ac/a307ae5ce869d7151b90d4b8b042a48eb454a936dacc695f6418486e5bd8/crispy-tailwind-1.0.3.tar.gz", hash = "sha256:2bc9f616d406e4b003f25d46fcb0079f1c2522719d97adb107667271d849459a", size = 19172 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c9/ca/11f65e24f3c182dfaf90fd3710d2dcca0fbc3026923e47b43f52a4a2349b/crispy_tailwind-1.0.3-py3-none-any.whl", hash = "sha256:31427f66b1c4fd0d6fb040f4197cfb97d104cdbe7641ea2dea940c0057c4db4b", size = 25700 },
+]
+
+[[package]]
 name = "cryptography"
 version = "44.0.1"
 source = { registry = "https://pypi.org/simple" }
@@ -172,6 +185,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/da/7e/90f41156a64f263c944a4b6ee0bdaa7d3f6eb1cd29b9c5753def29f5de23/django_cotton_components-0.1.6.tar.gz", hash = "sha256:25f4a7639a83ef188789331e9beef639ffa8cb334bdcea0cd05713d611ff672b", size = 17789 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d5/69/440bfccb58b6dd2fee673439c9865dbe1bab668e641714fb29f7f74000fc/django_cotton_components-0.1.6-py3-none-any.whl", hash = "sha256:580d070a7013728b8822bb9214c72e0650694ed596359d4f07ff94598f8bd76a", size = 22072 },
+]
+
+[[package]]
+name = "django-crispy-forms"
+version = "2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/04/f6/5bce7ae3512171c7c0ca3de31689e2a1ced8b030f156fcf13d2870e5468e/django_crispy_forms-2.3.tar.gz", hash = "sha256:2db17ae08527201be1273f0df789e5f92819e23dd28fec69cffba7f3762e1a38", size = 278849 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4c/3b/5dc3faf8739d1ce7a73cedaff508b4af8f6aa1684120ded6185ca0c92734/django_crispy_forms-2.3-py3-none-any.whl", hash = "sha256:efc4c31e5202bbec6af70d383a35e12fc80ea769d464fb0e7fe21768bb138a20", size = 31411 },
 ]
 
 [[package]]
@@ -338,6 +363,7 @@ name = "pycon"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "crispy-tailwind" },
     { name = "django" },
     { name = "django-allauth" },
     { name = "django-cotton" },
@@ -352,6 +378,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "crispy-tailwind", specifier = ">=1.0.3" },
     { name = "django", specifier = ">=5.1.6" },
     { name = "django-allauth", specifier = ">=65.4.1" },
     { name = "django-cotton", specifier = ">=1.5.1" },
