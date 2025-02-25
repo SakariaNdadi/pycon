@@ -19,7 +19,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 MY_APPS = [
-    "apps.todo.apps.TodoConfig",
+    "apps.note.apps.NoteConfig",
 ]
 
 THIRD_PARTY_APPS = [
