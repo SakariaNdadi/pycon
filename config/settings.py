@@ -29,20 +29,28 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+MY_APPS = [
+    "apps.todo",
+]
+
 THIRD_PARTY_APPS = [
     "django_browser_reload",
     "django_cotton",
     "django_cotton_components",
 ]
 
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-] + THIRD_PARTY_APPS
+INSTALLED_APPS = (
+    [
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+    ]
+    + THIRD_PARTY_APPS
+    + MY_APPS
+)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
