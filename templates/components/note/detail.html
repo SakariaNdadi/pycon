@@ -10,14 +10,17 @@
         </svg>
         {% if user == note.author %}
             <span class="justify-stretch">
-                <svg class="size-5 text-red-600 dark:text-white group-hover:scale-105 transition duration-500 ease-out cursor-pointer"
-                     hx-delete="{% url 'delete_note' id %}" hx-target="#note-list"
-                     hx-confirm="Are you sure you want to delete note?" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                     viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
-                </svg>
+
+                <form action="{% url 'delete_note' id %}" method="post"
+                      class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    {% csrf_token %} <button type="submit"><svg
+                        class="size-5 text-red-600 dark:text-white group-hover:scale-105 transition duration-500 ease-out cursor-pointer"
+                        hx-confirm="Are you sure you want to delete note?" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                    </svg></button></form>
+
             </span>
         {% endif %}
     </div>
