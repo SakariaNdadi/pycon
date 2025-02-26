@@ -7,7 +7,7 @@ from .models import Note
 
 def index(request):
     form = NoteForm()
-    return render(request, "c_index.html", {"notes": Note.objects.all(), "form": form})
+    return render(request, "index.html", {"notes": Note.objects.all(), "form": form})
 
 
 def create_note(request) -> HttpResponse:
