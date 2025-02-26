@@ -5,11 +5,7 @@ from .forms import NoteForm
 from .models import Note
 
 
-def index(request) -> HttpResponse:
-    return render(request, "index.html")
-
-
-def c_index(request):
+def index(request):
     form = NoteForm()
     return render(request, "c_index.html", {"notes": Note.objects.all(), "form": form})
 
@@ -27,4 +23,4 @@ def create_note(request) -> HttpResponse:
 def delete_note(request, id) -> HttpResponse:
     note = get_object_or_404(Note, id=id)
     note.delete()
-    return render(request, "components/note/list.html", {"data": Note.objects.all()})
+    return redirect("home")
